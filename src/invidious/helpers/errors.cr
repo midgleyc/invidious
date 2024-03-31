@@ -42,7 +42,8 @@ def error_template_helper(env : HTTP::Server::Context, status_code : Int32, exce
 
   # URLs for the error message below
   url_faq = "https://github.com/iv-org/documentation/blob/master/docs/faq.md"
-  url_search_issues = "https://github.com/iv-org/invidious/issues"
+  url_search_issues = "https://github.com/iv-org/invidious/issues?q=is%3Aissue+is%3Aopen+"
+  url_search_issues += URI.encode_www_form(issue_title)
 
   url_switch = "https://redirect.invidious.io" + env.request.resource
 
